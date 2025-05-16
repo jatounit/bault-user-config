@@ -118,7 +118,7 @@
                 &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
                 &kp A  &kp S  &kp D  &kp F  &kp G      &kp H      &kp J  &kp K  &kp L  &kp SEMICOLON
                 &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B      &kp N      &kp M      &kp COMMA      &kp PERIOD      &mt RSHFT SLASH
-                &kp N0      &kp LCTRL      &kp LALT      &lt layer_1 SPACE      &lt layer_2 SPACE      &kp LGUI      &kp RCTRL      &kp N0
+                &none      &kp LCTRL      &kp LALT      &lt 1 SPACE      &lt 2 SPACE      &kp LGUI      &kp RCTRL      &none
             >;
         };
 
@@ -128,7 +128,7 @@
                 &morph_1  &&morph_2  &morph_3  &morph_4 &morph_5 &morph_6 &morph_7   &morph_8    &kp KP_N9     &kp KP_N0     &kp DEL
                 &trans  &trans  &trans  &trans  &LBKT  &RBKT  &trans    &trans    &trans  &kp APOS
                 &mt LSHFT LPAR  &trans  &trans  &kp MINUS  &kp MINUS  &kp EQUAL  &trans  &trans  &trans  &mt RSHFT RPAR
-                &kp N0   &trans  &trans  &trans  &lt layer_3 SPACE  &trans    &trans &kp N0
+                &none   &trans  &trans  &trans  &lt 3 SPACE  &trans    &trans &none
             >;
         };
 
@@ -138,7 +138,7 @@
                 &kp GRAVE  &trans  &kp UP  &trans  &trans  &trans  &trans  &kp PG_UP  &trans  &trans  &trans
                 &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans        &kp HOME        &kp PG_DN        &kp END        &kp BSLH
                 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
-                &kp N0   &trans  &trans  &lt layer_3 SPACE  &trans        &trans        &trans &kp N0
+                &none   &trans  &trans  &lt 3 SPACE  &trans        &trans        &trans &none
             >;
         };
 
@@ -147,7 +147,7 @@
                 &kp F1  &kpF2  &kp F3  &kp F4  &kp F5  &kp trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
                 &kp F11  &kp F12  &trans  &trans  &kp INS  &kp PAUSE_BREAK        &trans        &trans        &trans        &trans
                 &trans  &trans  &trans  &trans  &trans  &kp KP_NUM    &trans  &trans  &trans  &trans
-                &kp N0   &trans  &trans  &trans  &trans        &trans        &trans &kp N0
+                &none   &trans  &trans  &trans  &trans        &trans        &trans &none
             >;
         };
 
