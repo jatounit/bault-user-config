@@ -59,21 +59,42 @@
     combos {
         compatible = "zmk,combos";
 
-        #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
-          combo_##NAME { \
-            bindings = <BINDINGS>; \
-            key-positions = <KEYPOS>; \
-            layers = <LAYERS>; \
-          };
-
-        /* QAZ */
-        COMBO(ESC, &kp ESC, 1 2, base)
-        COMBO(ENTER, &kp ENTER, 20 21, base)
-        COMBO(BKSP, &kp BKSP, 10 11, base)
-        COMBO(TAB, &kp TAB, 12 13, base)
-        COMBO(DELETE, &kp DEL, 10 11, layer_1)
-        COMBO(CAPS, &kp CAPS, 22 31, layer_3)
-
+        ESC {
+            timeout-ms = <20>;
+            bindings = <&kp ESC>; 
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+        ENTER {
+            timeout-ms = <20>;
+            bindings = <&kp ENTER>; 
+            key-positions = <20 21>;
+            layers = <0>;
+        };
+        BACKSPACE {
+            timeout-ms = <20>;
+            bindings = <&kp BKSP>; 
+            key-positions = <10 11>;
+            layers = <0>;
+        };
+        TAB {
+            timeout-ms = <20>;
+            bindings = <&kp TAB>; 
+            key-positions = <12 13>;
+            layers = <0>;
+        };
+        DELETE {
+            timeout-ms = <20>;
+            bindings = <&kp DEL>; 
+            key-positions = <10 11>;
+            layers = <1>;
+        };
+        CAPSLOCK {
+            timeout-ms = <20>;
+            bindings = <&kp CAPS>; 
+            key-positions = <22 31>;
+            layers = <3>;
+        };
     };
 
     keymap {
