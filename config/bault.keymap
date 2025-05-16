@@ -12,44 +12,121 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <145>;
             quick-tap-ms = <180>;
-            require-prior-idle-ms = <0>;
+            require-prior-idle-ms = <50>;
             flavor = "tap-preferred";
+        };
+        morph_1: morph_1 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N1>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
+        };
+        morph_2: morph_2 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N2>, <&kp AT>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
+        };
+        morph_3: morph_3 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N3>, <&kp HASH>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
+        };
+        morph_4: morph_4 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N4>, <&kp DOLLAR>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
+        };
+        morph_5: morph_5 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N5>, <&kp PERCENT>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
+        };
+        morph_6: morph_6 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N6>, <&kp CARET>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
+        };
+        morph_7: morph_7 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N7>, <&kp AMPS>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
+        };
+        morph_8: morph_8 {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N8>, <&kp STAR>;
+            mods = <(MOD_LSFT|MOD_RHFT)>;
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        #define COMBO(NAME, BINDINGS, KEYPOS, LAYERS) \
+          combo_##NAME { \
+            bindings = <BINDINGS>; \
+            key-positions = <KEYPOS>; \
+            layers = <LAYERS>; \
+          };
+
+        /* QAZ */
+        COMBO(ESC, &kp ESC, 1 2, base)
+        COMBO(ENTER, &kp ENTER, 20 21, base)
+        COMBO(BKSP, &kp BKSP, 10 11, base)
+        COMBO(TAB, &kp TAB, 12 13, base)
+        COMBO(DELETE, &kp DEL, 10 11, layer_1)
+        COMBO(CAPS, &kp CAPS, 22 31, layer_3)
+
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-                &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I      &kp O      &kp P      &kp LEFT_BRACKET
-                &hm LEFT_CONTROL A  &hm LEFT_ALT S  &hm LGUI D  &hm LEFT_SHIFT F  &kp G      &kp H      &hm RIGHT_SHIFT J  &hm RIGHT_GUI K  &hm LEFT_ALT L  &hm RCTRL SEMICOLON
-                &kp Z      &kp X      &kp C      &kp V      &kp B      &kp N      &kp M      &kp COMMA      &kp PERIOD      &kp SLASH
-                &kp N0      &mo 3      &kp ENTER      &kp SPACE      &kp BACKSPACE      &mo 1      &mo 2      &kp N0
+                &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
+                &kp A  &kp S  &kp D  &kp F  &kp G      &kp H      &kp J  &kp K  &kp L  &kp SEMICOLON
+                &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B      &kp N      &kp M      &kp COMMA      &kp PERIOD      &mt RSHFT SLASH
+                &kp N0      &kp LCTRL      &kp LALT      &lt layer_1 SPACE      &lt layer_2 SPACE      &kp LGUI      &kp RCTRL      &kp N0
             >;
         };
 
 
         layer_1 {
             bindings = <
-                &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7    &kp N8    &kp N9     &kp N0     &studio_unlock
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp UP    &kp MINUS  &kp EQUAL
-                &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-                &kp N0   &trans  &trans  &trans  &trans  &trans    &trans &kp N0
+                &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_N0     &kp DEL
+                &trans  &trans  &trans  &trans  &LBKT  &RBKT  &trans    &trans    &trans  &kp APOS
+                &mt LSHFT LPAR  &trans  &trans  &kp MINUS  &kp MINUS  &kp EQUAL  &trans  &trans  &trans  &mt RSHFT RPAR
+                &kp N0   &trans  &trans  &trans  &lt layer_3 SPACE  &trans    &trans &kp N0
             >;
         };
 
 
-        connectivity {
+        layer_2 {
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bootloader
-                &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans        &trans        &trans
-                &trans  &trans  &trans  &trans  &trans  &bt BT_CLR    &out OUT_BLE  &out OUT_USB  &out OUT_TOG  &trans
+                &kp GRAVE  &trans  &kp UP  &trans  &trans  &trans  &trans  &kp PG_UP  &trans  &trans  &trans
+                &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans        &kp HOME        &kp PG_DN        &kp END        &kp BSLH
+                &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+                &kp N0   &trans  &trans  &lt layer_3 SPACE  &trans        &trans        &trans &kp N0
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+                &kp F1  &kpF2  &kp F3  &kp F4  &kp F5  &kp trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+                &kp F11  &kp F12  &trans  &trans  &kp INS  &kp PAUSE_BREAK        &trans        &trans        &trans        &trans
+                &trans  &trans  &trans  &trans  &trans  &kp KP_NUM    &trans  &trans  &trans  &trans
                 &kp N0   &trans  &trans  &trans  &trans        &trans        &trans &kp N0
             >;
         };
+
     };
 };
