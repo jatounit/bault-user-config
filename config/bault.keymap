@@ -8,51 +8,59 @@
     behaviors {
         morph_1: morph_1 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label = "!";
             bindings = <&kp KP_N1>, <&kp EXCL>;
+            #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RHFT)>;
         };
         morph_2: morph_2 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label = "@";
             bindings = <&kp KP_N2>, <&kp AT>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         morph_3: morph_3 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label ="#";
             bindings = <&kp KP_N3>, <&kp HASH>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         morph_4: morph_4 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label = "$";
             bindings = <&kp KP_N4>, <&kp DOLLAR>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         morph_5: morph_5 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label = "%";
             bindings = <&kp KP_N5>, <&kp PERCENT>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         morph_6: morph_6 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label = "^";
             bindings = <&kp KP_N6>, <&kp CARET>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         morph_7: morph_7 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label = "&";
             bindings = <&kp KP_N7>, <&kp AMPS>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         morph_8: morph_8 {
             compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
+            label = "*";
             bindings = <&kp KP_N8>, <&kp STAR>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
