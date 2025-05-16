@@ -67,37 +67,42 @@
     combos {
         compatible = "zmk,combos";
 
-        ESC {
+        combo_esc {
             timeout-ms = <20>;
             bindings = <&kp ESC>; 
             key-positions = <1 2>;
             layers = <0>;
         };
-        ENTER {
+
+        combo_enter {
             timeout-ms = <20>;
             bindings = <&kp ENTER>; 
             key-positions = <20 21>;
             layers = <0>;
         };
-        BACKSPACE {
+
+        combo_backspace {
             timeout-ms = <20>;
             bindings = <&kp BKSP>; 
             key-positions = <10 11>;
             layers = <0>;
         };
-        TAB {
+
+        combo_tab {
             timeout-ms = <20>;
             bindings = <&kp TAB>; 
             key-positions = <12 13>;
             layers = <0>;
         };
-        DELETE {
+
+        combo_delete {
             timeout-ms = <20>;
             bindings = <&kp DEL>; 
             key-positions = <10 11>;
             layers = <1>;
         };
-        CAPSLOCK {
+
+        combo_caps {
             timeout-ms = <20>;
             bindings = <&kp CAPS>; 
             key-positions = <22 31>;
