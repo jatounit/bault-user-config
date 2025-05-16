@@ -1,64 +1,76 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 
 / {
-
     behaviors {
         morph_1: morph_1 {
             compatible = "zmk,behavior-mod-morph";
             label = "!";
             bindings = <&kp KP_N1>, <&kp EXCL>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         morph_2: morph_2 {
             compatible = "zmk,behavior-mod-morph";
             label = "@";
             bindings = <&kp KP_N2>, <&kp AT>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         morph_3: morph_3 {
             compatible = "zmk,behavior-mod-morph";
-            label ="#";
+            label = "#";
             bindings = <&kp KP_N3>, <&kp HASH>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         morph_4: morph_4 {
             compatible = "zmk,behavior-mod-morph";
             label = "$";
             bindings = <&kp KP_N4>, <&kp DOLLAR>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         morph_5: morph_5 {
             compatible = "zmk,behavior-mod-morph";
             label = "%";
             bindings = <&kp KP_N5>, <&kp PERCENT>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         morph_6: morph_6 {
             compatible = "zmk,behavior-mod-morph";
             label = "^";
             bindings = <&kp KP_N6>, <&kp CARET>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         morph_7: morph_7 {
             compatible = "zmk,behavior-mod-morph";
             label = "&";
             bindings = <&kp KP_N7>, <&kp AMPS>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
         morph_8: morph_8 {
             compatible = "zmk,behavior-mod-morph";
             label = "*";
             bindings = <&kp KP_N8>, <&kp STAR>;
+
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
@@ -69,43 +81,43 @@
 
         combo_esc {
             timeout-ms = <20>;
-            bindings = <&kp ESC>; 
-            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+            key-positions = <1 0>;
             layers = <0>;
         };
 
         combo_enter {
             timeout-ms = <20>;
-            bindings = <&kp ENTER>; 
-            key-positions = <20 21>;
+            bindings = <&kp ENTER>;
+            key-positions = <20 19>;
             layers = <0>;
         };
 
         combo_backspace {
             timeout-ms = <20>;
-            bindings = <&kp BKSP>; 
-            key-positions = <10 11>;
+            bindings = <&kp BKSP>;
+            key-positions = <10 9>;
             layers = <0>;
         };
 
         combo_tab {
             timeout-ms = <20>;
-            bindings = <&kp TAB>; 
-            key-positions = <12 13>;
+            bindings = <&kp TAB>;
+            key-positions = <12 11>;
             layers = <0>;
         };
 
         combo_delete {
             timeout-ms = <20>;
-            bindings = <&kp DEL>; 
-            key-positions = <10 11>;
+            bindings = <&kp DEL>;
+            key-positions = <10 9>;
             layers = <1>;
         };
 
         combo_caps {
             timeout-ms = <20>;
-            bindings = <&kp CAPS>; 
-            key-positions = <22 31>;
+            bindings = <&kp CAPS>;
+            key-positions = <21 30>;
             layers = <3>;
         };
     };
@@ -115,39 +127,37 @@
 
         base {
             bindings = <
-                &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I      &kp O      &kp P      &kp BSPC
-                &kp A  &kp S  &kp D  &kp F  &kp G      &kp H      &kp J  &kp K  &kp L  &kp SEMICOLON
-                &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B      &kp N      &kp M      &kp COMMA      &kp PERIOD      &mt RSHFT SLASH
-                &none      &kp LCTRL      &kp LALT      &lt 1 SPACE      &lt 2 SPACE      &kp LGUI      &kp RCTRL      &none
+&kp Q        &kp W      &kp E     &kp R        &kp T  &kp Y        &kp U  &kp I      &kp O       &kp P            &kp BSPC
+&kp A        &kp S      &kp D     &kp F        &kp G  &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON
+&mt LSHFT Z  &kp X      &kp C     &kp V        &kp B  &kp N        &kp M  &kp COMMA  &kp PERIOD  &mt RSHFT SLASH
+&none        &kp LCTRL  &kp LALT  &lt 1 SPACE         &lt 2 SPACE         &kp LGUI   &kp RCTRL   &none
             >;
         };
-
 
         layer_1 {
             bindings = <
-                &morph_1  &morph_2  &morph_3  &morph_4 &morph_5 &morph_6 &morph_7   &morph_8    &kp KP_N9     &kp KP_N0     &kp DEL
-                &trans  &trans  &trans  &trans  &kp LBKT  &kp RBKT  &trans    &trans    &trans  &kp APOS
-                &mt LSHFT LPAR  &trans  &trans  &kp MINUS  &kp MINUS  &kp EQUAL  &trans  &trans  &trans  &mt RSHFT RPAR
-                &none   &trans  &trans  &trans  &lt 3 SPACE  &trans    &trans &none
+&morph_1        &morph_2  &morph_3  &morph_4   &morph_5   &morph_6     &morph_7  &morph_8  &kp KP_N9  &kp KP_N0       &kp DEL
+&trans          &trans    &trans    &trans     &kp LBKT   &kp RBKT     &trans    &trans    &trans     &kp APOS
+&mt LSHFT LPAR  &trans    &trans    &kp MINUS  &kp MINUS  &kp EQUAL    &trans    &trans    &trans     &mt RSHFT RPAR
+&none           &trans    &trans    &trans                &lt 3 SPACE            &trans    &trans     &none
             >;
         };
 
-
         layer_2 {
             bindings = <
-                &kp GRAVE  &trans  &kp UP  &trans  &trans  &trans  &trans  &kp PG_UP  &trans  &trans  &trans
-                &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans        &kp HOME        &kp PG_DN        &kp END        &kp BSLH
-                &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
-                &none   &trans  &trans  &lt 3 SPACE  &trans        &trans        &trans &none
+&kp GRAVE  &trans    &kp UP    &trans       &trans  &trans  &trans    &kp PG_UP  &trans   &trans    &trans
+&trans     &kp LEFT  &kp DOWN  &kp RIGHT    &trans  &trans  &kp HOME  &kp PG_DN  &kp END  &kp BSLH
+&trans     &trans    &trans    &trans       &trans  &trans  &trans    &trans     &trans   &trans
+&none      &trans    &trans    &lt 3 SPACE          &trans            &trans     &trans   &none
             >;
         };
 
         layer_3 {
             bindings = <
-                &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-                &kp F11  &kp F12  &trans  &trans  &kp INS  &kp PAUSE_BREAK        &trans        &trans        &trans        &trans
-                &trans  &trans  &trans  &trans  &trans  &kp KP_NUM    &trans  &trans  &trans  &trans
-                &none   &trans  &trans  &trans  &trans        &trans        &trans &none
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5   &trans           &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp F11  &kp F12  &trans  &trans  &kp INS  &kp PAUSE_BREAK  &trans  &trans  &trans  &trans
+&trans   &trans   &trans  &trans  &trans   &kp KP_NUM       &trans  &trans  &trans  &trans
+&none    &trans   &trans  &trans           &trans                   &trans  &trans  &none
             >;
         };
     };
