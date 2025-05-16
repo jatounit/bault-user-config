@@ -126,7 +126,7 @@
         layer_1 {
             bindings = <
                 &morph_1  &morph_2  &morph_3  &morph_4 &morph_5 &morph_6 &morph_7   &morph_8    &kp KP_N9     &kp KP_N0     &kp DEL
-                &trans  &trans  &trans  &trans  &LBKT  &RBKT  &trans    &trans    &trans  &kp APOS
+                &trans  &trans  &trans  &trans  &kp LBKT  &kp RBKT  &trans    &trans    &trans  &kp APOS
                 &mt LSHFT LPAR  &trans  &trans  &kp MINUS  &kp MINUS  &kp EQUAL  &trans  &trans  &trans  &mt RSHFT RPAR
                 &none   &trans  &trans  &trans  &lt 3 SPACE  &trans    &trans &none
             >;
