@@ -11,7 +11,7 @@
             label = "!";
             bindings = <&kp KP_N1>, <&kp EXCL>;
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RHFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         morph_2: morph_2 {
             compatible = "zmk,behavior-mod-morph";
